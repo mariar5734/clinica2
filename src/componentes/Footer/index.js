@@ -1,0 +1,12 @@
+import styles from "./Footer.module.css";
+
+export default function Footer () {
+    return (
+        <div>
+            {/* <footer className={styles.footer} >
+                <h1 className={styles.h1}>Clínica</h1>
+                <p className={styles.p}>©️ Copyright - 2025</p>
+            </footer> */}
+        </div>
+    )
+}
