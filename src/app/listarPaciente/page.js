@@ -1,30 +1,36 @@
 'use client'
 import { useEffect, useState } from "react";
-import styles from "./listarMedico.module.css";
-// import Image from "next/image";
+import styles from "./listarpaciente.module.css";
 
-export default function medico() {
+export default function paciente() {
     let [nome, setNome] = useState(undefined)
-    let [medicos, setMedicos] = useState([])
+    let [pacientes, setPacientes] = useState([])
     const [mostrar, setMostrar] = useState(false);
 
-    const [busca, setBusca] = useState('');
-    const nomesBusca = medicos.filter((medico) => (medico.nome.toLowerCase().includes(busca.toLowerCase())));
+    const [busca, setBusta] = useState('');
+    const nomesBusca = pacientes.filter((paciente) => (paciente.nome.toLowerCase().includes(busca.toLowerCase())));
     const getMedicos = async (nome) => {
-        let response = await fetch('https://api-clinica-2a.onrender.com/medicos');
+        let response = await fetch('https://api-clinica-2a.onrender.com/pacientes');
         let data = await response.json();
         console.log(data)
-
         if (typeof nome == 'undefined') {
-            setMedicos(data);
+            setPacientes(data);
+
         } else {
             data = data.filter(item => item.nome.toLowerCase().includes(nome.toLowerCase()));
-            setMedicos(data);
+            setPacientes(data);
+
+
+
         }
 
         if (!response.ok) {
             throw new Error('Não foi possível buscar' + response.statusText);
         }
+
+
+
+
     }
 
     useEffect(() => {
@@ -34,24 +40,22 @@ export default function medico() {
 
 
         <main className={styles.main}>
-            <h1>Médicos</h1>
+            <h1>Pacientes</h1>
             <div className={styles.medicos_conteinar}>
-                
                 <button className={styles.buttonMedic}
-                onClick={() => setMostrar(!mostrar)}
-                >Buscar Médicos</button>
+                    onClick={() => setMostrar(!mostrar)}
+                >Buscar Paciente</button>
                 {mostrar &&
                     <div className={styles.botao} onClick={() => setMostrar(!mostrar)}>
                         <div className={styles.selecione} onClick={(e) => e.stopPropagation()}>
-                            <h3>Selecione um médico</h3>
+                            <h3>Selecione o Paciente</h3>
                             <input
-                                placeholder="Digite o nome do médico"
+                                placeholder="Digite o nome do paciente"
                                 type="text"
-                                onChange={(e) => setBusca(e.target.value)}
+                                onChange={(e) => setBusta(e.target.value)}
                                 value={busca}
                                 onClick={() => setMostrar(mostrar)}
-                                >
-                                    
+                            >
 
                             </input>
                             <ul>
@@ -64,9 +68,6 @@ export default function medico() {
                     </div>
                 }
 
-
-
-
                 <div className={styles.tabela_Container}>
                     <table className={styles.tabela_medic}>
                         <thead className={styles.thead}>
@@ -75,17 +76,17 @@ export default function medico() {
                                 <th className={styles.th}>Nome</th>
                                 <th className={styles.th}>Telefone</th>
                                 <th className={styles.th}>Email</th>
-                                <th className={styles.th}>Especialidade</th>
+                                <th className={styles.th}>CPF</th>
                             </tr>
                         </thead>
                         <tbody className={styles.tbody}>
-                            {medicos.map((medico) => (
-                                <tr className={styles.tro} key={medico.id}>
-                                    <td className={styles.td}>{medico.id}</td>
-                                    <td className={styles.td}>{medico.nome}</td>
-                                    <td className={styles.td}>{medico.telefone}</td>
-                                    <td className={styles.td}>{medico.email}</td>
-                                    <td className={styles.td}>{medico.especialidade}</td>
+                            {pacientes.map((paciente) => (
+                                <tr className={styles.tro} key={paciente.id}>
+                                    <td className={styles.td}>{paciente.id}</td>
+                                    <td className={styles.td}>{paciente.nome}</td>
+                                    <td className={styles.td}>{paciente.telefone}</td>
+                                    <td className={styles.td}>{paciente.email}</td>
+                                    <td className={styles.td}>{paciente.cpf}</td>
                                 </tr>
                             ))}
                         </tbody>
@@ -93,7 +94,7 @@ export default function medico() {
                 </div>
             </div>
         </main>
-
     );
+
 
 }
