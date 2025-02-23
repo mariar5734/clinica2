@@ -1,7 +1,7 @@
 'use client'
 import { useEffect, useState } from "react";
 import styles from "./listarMedico.module.css";
-// import Image from "next/image";
+import Image from "next/image";
 
 export default function medico() {
     let [nome, setNome] = useState(undefined)
@@ -38,8 +38,7 @@ export default function medico() {
             <div className={styles.medicos_conteinar}>
                 
                 <button className={styles.buttonMedic}
-                onClick={() => setMostrar(!mostrar)}
-                >Buscar Médicos</button>
+                onClick={() => setMostrar(!mostrar)}>Buscar Médicos</button>
                 {mostrar &&
                     <div className={styles.botao} onClick={() => setMostrar(!mostrar)}>
                         <div className={styles.selecione} onClick={(e) => e.stopPropagation()}>

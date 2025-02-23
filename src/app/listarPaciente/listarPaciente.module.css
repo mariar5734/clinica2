@@ -1,5 +1,5 @@
 .buttonMedic {
-    background-color: rgb(131, 240, 116);
+    background-color: rgb(97, 140, 231);
     color: rgb(216, 224, 255);
     border-top: solid 5px rgb(55, 55, 105);
     border-left: solid 5px rgb(55, 55, 105);
@@ -26,7 +26,7 @@
 .tabela_medic {
     width: 100%;
     border-collapse: collapse;
-    background: rgb(178, 227, 192);
+    background: rgb(156, 177, 221);
     cursor: pointer;
     max-width: 6 00px;
     text-align: center;
@@ -36,7 +36,7 @@
 
 .th {
     display: table-cell;
-    background-color:rgb(95, 184, 150) ;
+    background-color:rgb(95, 123, 184) ;
     vertical-align: inherit;
     font-weight: bold;
     unicode-bidi: isolate;
@@ -124,4 +124,3 @@
 .li {
     list-style-type: none;
 }
-

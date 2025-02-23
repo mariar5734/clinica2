@@ -1,6 +1,7 @@
 'use client'
 import { useEffect, useState } from "react";
 import styles from "./listarpaciente.module.css";
+// import Image from "next/image";
 
 export default function paciente() {
     let [nome, setNome] = useState(undefined)
@@ -68,6 +69,8 @@ export default function paciente() {
                     </div>
                 }
 
+
+
                 <div className={styles.tabela_Container}>
                     <table className={styles.tabela_medic}>
                         <thead className={styles.thead}>
@@ -95,6 +98,4 @@ export default function paciente() {
             </div>
         </main>
     );
-
-
 }

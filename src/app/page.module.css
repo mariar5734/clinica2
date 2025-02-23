@@ -7,7 +7,7 @@
 .divFotos{
   align-items: center;
   display: flex;
-  border: solid rgb(36, 23, 160);
+  border: solid rgb(23, 160, 80);
   justify-content: center;
   gap: 30px;
   width: 80%;
@@ -16,12 +16,12 @@
   padding: 10px;
   height: 500px;
   border-radius: 10px;
-  background-color: #9bbaff;
+  background-color: #0e0f13;
 }
 
 .text{
   font-size: 1.2rem;
-  color: #34495e;
+  color: #000000;
   line-height: 1.6;
   max-width: 800px;
   margin: 0 auto;
@@ -32,8 +32,11 @@
   flex-direction: column;
   gap: 40px;
 
+
 }
 
 .containerPrincipal>p {
   text-align: center;
 }
+
+

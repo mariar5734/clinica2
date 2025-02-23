@@ -1,6 +1,6 @@
 'use client'
 import { useEffect, useState } from "react";
-import styles from "./listarAgendamento.module.css";
+import styles from "./llistarAgendamento.module.css";
 
 export default function agendamento() {
     const [consultas, setConsultas] = useState([]);
