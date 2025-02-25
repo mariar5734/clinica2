@@ -1,6 +1,6 @@
 'use client'
 import { useEffect, useState } from "react";
-import styles from "./listarpaciente.module.css";
+import styles from "./listarPaciente.module.css";
 // import Image from "next/image";
 
 export default function paciente() {
